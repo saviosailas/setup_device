@@ -29,13 +29,21 @@ When system as for reboot, click "reboot now" and close the window when screen t
 1. create new desktop file <br> <br>
 <code> sudo nano /usr/share/applications/ubuntu14.0.desktop</code> <br> <br>
 
-2. Paste the following code into that file <br> <br>
+2. Create new file inside ~/QEMU <br>
+<code>nano ~/QEMU/run.sh </code><br>
+Paste followinf code into that file <br>
+<code>#!/bin/bash</code><br>
+<code>sudo qemu-system-x86_64 -m 1024 -machine ubuntu,accel=kvm -hda  /home/\<user name\>/QEMU/Ubuntu_14.04.img </code><br>
+  save the file <code> ctrl + X </code> <br>
+  <code>chmod +x ~/QEMU/run.sh</code> <br>
+  
+3. Paste the following code into that file <br> <br>
 <code> [Desktop Entry] </code> <br>
 <code> Version = 14.04.0 </code> <br>
 <code> Type = Application </code> <br>
 <code> Terminal = false </code> <br>
 <code> Name = Ubuntu 14.04</code> <br>
-<code> Exec = sudo qemu-system-x86_64 -m 1024 -machine ubuntu,accel=kvm -hda  /home/\<user name\>/QEMU/Ubuntu_14.04.img </code> <br>
+<code> Exec = /home/\<user name\>/QEMU/run.sh </code> <br>
 <code> Icon = /home/\<user name\>/QEMU/icon/ubuntu.png </code> <br>
 <code> Categories = Application; </code> <br> <br>
 
