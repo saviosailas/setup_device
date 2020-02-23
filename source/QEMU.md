@@ -33,7 +33,7 @@ When system as for reboot, click "reboot now" and close the window when screen t
 <code>nano ~/QEMU/run.sh </code><br>
 Paste followinf code into that file <br>
 <code>#!/bin/bash</code><br>
-<code>sudo qemu-system-x86_64 -m 1024 -machine ubuntu,accel=kvm -hda  /home/\<user name\>/QEMU/Ubuntu_14.04.img </code><br>
+<code>sudo qemu-system-x86_64 -m 1024 -machine ubuntu,accel=kvm -hda  /home/\<user name\>/QEMU/Ubuntu_14.04.img </code><br><br>
   save the file <code> ctrl + X </code> <br>
   <code>chmod +x ~/QEMU/run.sh</code> <br>
   
